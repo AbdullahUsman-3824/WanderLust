@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-md bg-body-primary sticky-top py-4 my-0">
+  <div class="container-fluid">
+    <a class="navbar-brand mx-5" href="/listings"
+      ><i class="fa-regular fa-compass"></i><b>Wanderlust</b></a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav mx-5">
+        <a class="nav-link nav-options" href="/listings">Explore</a>
+      </div>
+      <div class="navbar-nav nav-right mx-5 ms-auto">
+        <a class="nav-link nav-options" href="/listings/new">Airbnd your home</a>
+        <div class="dropdown">
+          <button class="account-btn" data-bs-toggle="dropdown">
+            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-circle-user"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end account-menu">
+            <% if(!currUser) { %>
+            <li>
+              <a
+                class="nav-link dropdown-item"
+                aria-current="page"
+                href="/signup"
+                ><b>Sign up</b></a
+              >
+            </li>
+            <li><a class="nav-link dropdown-item" href="/login">Login</a></li>
+            <% } %> <% if(currUser) { %>
+            <li><a class="nav-link dropdown-item" href="/logout">LogOut</a></li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
